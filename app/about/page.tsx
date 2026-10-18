@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "About" };
+export default function About() { return <section className="page-shell about-page"><p className="eyebrow"><span className="eyebrow-dot" /> ABOUT</p><h1>A bit about<br /><em>this blog.</em></h1><div className="about-card"><div className="about-symbol">✳</div><div><p>I started this blog as a place to write things down: projects I’m working on, things I’ve learned, and the occasional thought that deserves more than a note on my phone.</p><p>I’m still figuring out what it will become. Thanks for having a look around.</p><span className="signature">— The person behind the blog</span></div></div><p className="about-footnote">EDIT THIS PAGE TO MAKE IT YOURS</p></section>; }
