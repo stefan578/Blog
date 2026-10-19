@@ -2,13 +2,14 @@
 
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
+import { getAuth } from "@/lib/auth";
 import Post from "@/lib/PostModel";
 import dbConnect from "@/lib/mongoose";
 
 export interface PostType { id: string; date: Date; title: string; content: string[] }
 
 async function requireUser() {
+  const auth = await getAuth();
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) redirect("/signin");
   return session.user;
